@@ -1,0 +1,29 @@
+{
+  "name": "etiqa-technical-assesment-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazekagekun94/etiqa-technical-assesment-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kazekagekun94/etiqa-technical-assesment-backend/issues"
+  },
+  "homepage": "https://github.com/kazekagekun94/etiqa-technical-assesment-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "mongoose": "^5.10.4",
+    "passport": "^0.4.1",
+    "path": "^0.12.7"
+  }
+}
