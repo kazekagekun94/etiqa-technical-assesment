@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const passport = require("passport");
+const userRoutes = require("./routes/usersRoutes")
 // const helmet = require("helmet");
 
 // const cors = require("cors");
@@ -47,6 +48,9 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+app.use("/api/users", userRoutes);
+
 
 
 module.exports = app;
