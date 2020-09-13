@@ -1,19 +1,41 @@
 const User = require("../models/usersModel")
 
 exports.registerUser = async (req, res, next) => {
-    console.log(req.body)
-    const newUser = { username, email, phoneNumber, skillSets, hobby } = req.body
-    await new User(newUser).save()
+    try {
+        console.log(req.body)
+        const newUser = { username, email, phoneNumber, skillSets, hobby } = req.body
+        await new User(newUser).save()
 
-    res.status(200).json({
-        status: "success"
-    })
+        return res.status(200).json({
+            status: "success"
+        })
+    } catch (err) {
+        return res.status(400).json({
+            status: "fail"
+        })
+    }
+
 
 }
 
-// exports.deleteUser = async (req, res, next) => {
-
-// }
+exports.deleteUser = async (req, res, next) => {
+    try {
+        const userId = req.params.userId
+        const status = await User.deleteMany({
+            _id: {
+                $in: [req.body.userIds]
+            }
+        });
+        return res.status(200).json({
+            status: "success"
+        })
+    } catch (err) {
+        return res.status(400).json({
+            status: "fail",
+            error: "Please retry to delete user."
+        })
+    }
+}
 
 // exports.updateUser = async (req, res, next) => {
 
