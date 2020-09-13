@@ -5,7 +5,7 @@ const passport = require("passport");
 
 router.post("/", usersController.registerUser);
 router.delete("/", usersController.deleteUser);
-// router.get("/", usersController.getUsers);
+router.put("/", usersController.updateUser);
 
 
 
